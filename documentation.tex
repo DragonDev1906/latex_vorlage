@@ -1,0 +1,50 @@
+\include{preamble}
+
+\begin{document}
+% Renaming the cref names (can only be done after begin document)
+\crefname{figure}{Abbildung}{Abbildung}
+\crefname{chapter}{Kapitel}{Kapitel}
+\crefname{section}{Abschnitt}{Abschnitt}
+\crefname{table}{Tabelle}{Tabelle}
+
+%Seiten ohne Kopf- und Fußzeile sowie Seitenzahl
+\pagestyle{empty}
+
+% Title Page
+\includepdf[pages={1}]{title.pdf}
+
+% Beendet eine Seite und erzwingt auf den nachfolgenden Seiten die Ausgabe aller Gleitobjekte (z.B. Abbildungen), die bislang definiert, aber noch nicht ausgegeben wurden. Dieser Befehl fügt, falls nötig, eine leere Seite ein, sodaß die nächste Seite nach den Gleitobjekten eine ungerade Seitennummer hat. 
+\cleardoubleoddpage
+
+% pagestyle für gesamtes Dokument aktivieren
+\pagestyle{headings}
+
+% Inhaltsverzeichnis
+\addcontentsline{toc}{chapter}{Inhaltsverzeichnis}
+\tableofcontents
+
+% Abbildungsverzeichnis
+\listoffigures
+
+% Tabellenverzeichnis
+\let\LaTeXStandardClearpage\clearpage		% Save the previous \clearpage command
+\let\clearpage\relax						% Do not put listoftables on a new page by replacing \clearpage with \relax
+\listoftables
+\let\clearpage\LaTeXStandardClearpage		% Restore the \clearpage command
+
+% Abkürzungsverzecihnis
+\printglossary[type=\acronymtype , title=Abkürzungsverzeichnis, style=long]
+
+
+% Content
+
+
+% Literaturverzeichnis
+\bibliographystyle{unsrt}
+\bibliography{Literatur}
+
+
+% \include{ehrenwoertliche_erklaerung}
+
+
+\end{document}

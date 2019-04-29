@@ -1,0 +1,66 @@
+% Dokumentklasse
+\documentclass[listof=totoc, bibliography=totoc, a4paper,12pt, parskip=half, headsepline]{scrreprt}
+
+% ============= Packages =============
+% Ränder
+%\usepackage[left= 2.5cm,right = 2cm, bottom = 4 cm]{geometry}
+\usepackage[left= 2.5cm,right = 2cm, bottom = 2.5 cm]{geometry}
+
+% Dokumentinformationen
+\usepackage[hyphens]{url}
+\usepackage[
+	pdftitle={Praxissemester Bericht},
+	pdfsubject={},
+	pdfauthor={Jens Winkle},
+	pdfkeywords={},	
+	%Links nicht einrahmen
+	hidelinks
+]{hyperref}
+
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx, subfig}
+\graphicspath{{img/}}
+\usepackage{scrlayer-scrpage}
+\usepackage{lmodern}
+\usepackage{color}
+% \usepackage{minted}
+\usepackage{cleveref}
+
+% Literaturverzeichnis
+% \usepackage[style=numeric-comp]{biblatex}
+
+% Citation
+\usepackage[autostyle]{csquotes}
+
+% Glossary
+\usepackage[toc, acronym, nonumberlist, nopostdot]{glossaries}
+\setlength{\glsdescwidth}{0.8\hsize}
+\makeglossaries
+
+% Include PDF for Title
+\usepackage{pdfpages}
+
+% zusätzliche Schriftzeichen der American Mathematical Society
+\usepackage{amsfonts}
+% \usepackage{amsmath}
+
+%nicht einrücken nach Absatz
+%\setlength{\parindent}{0pt}
+
+% ============= Kopf- und Fußzeile =============
+\pagestyle{headings}
+\automark{chapter}
+\ihead{\headmark}
+\chead{}
+\ohead{\pagemark}
+\cfoot*{}
+
+% ============= Package Einstellungen & Sonstiges ============= 
+%Besondere Trennungen
+%\hyphenation{De-zi-mal-tren-nung}
+
+% Glossary Entries
+% \include{10_glossary_entries}
+% \makeglossaries
